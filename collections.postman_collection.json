@@ -1,0 +1,96 @@
+{
+	"info": {
+		"_postman_id": "67498b82-fd84-4548-98f6-e3662e3e19f5",
+		"name": "Pangaea Take-home assignment collections",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a subscription",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"url\": \"http://localhost:9000/test/1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/subscribe/topic1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"subscribe",
+						"topic1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Publish message to topic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"message\": \"hello\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/publish/topic1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"publish",
+						"topic1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Test subscriber server",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"topic\": \"topic1\",\n    \"data\": {\n        \"message\": \"hello\"\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9000/test/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9000",
+					"path": [
+						"test",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
